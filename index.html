@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore | Modern E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+    <header class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class='bx bx-hive'></i> TechStore
+            </div>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">About</a>
+            </nav>
+            <div class="cart-icon" id="cart-icon">
+                <i class='bx bx-shopping-bag'></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Elevate Your Workspace</h1>
+            <p>Premium tech accessories designed for modern professionals.</p>
+        </section>
+
+        <section class="product-grid" id="product-grid">
+            </section>
+    </main>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart"><i class='bx bx-x'></i></button>
+        </div>
+        
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart" id="empty-cart">
+                <i class='bx bx-cart'></i>
+                <p>Your cart is empty.</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Total Items:</span>
+                    <span id="total-items-count">0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Grand Total:</span>
+                    <span id="grand-total">₹0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn" onclick="startPayment()">
+                <span id="checkout-text">Secure Checkout</span>
+                <div class="loader" id="checkout-loader" style="display: none;"></div>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon success-icon">
+                <i class='bx bx-check-circle'></i>
+            </div>
+            <h2>Payment Successful!</h2>
+            <p>Your order has been placed successfully.</p>
+            <div class="payment-details">
+                <p><strong>Payment ID:</strong> <span id="success-payment-id"></span></p>
+                <p><strong>Amount Paid:</strong> ₹<span id="success-amount"></span></p>
+            </div>
+            <button class="modal-btn" onclick="closeModals()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="failure-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon error-icon">
+                <i class='bx bx-error-circle'></i>
+            </div>
+            <h2>Payment Failed</h2>
+            <p id="failure-reason">An error occurred during payment. Please try again.</p>
+            <button class="modal-btn error-btn" onclick="closeModals()">Try Again</button>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
