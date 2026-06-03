@@ -3,19 +3,19 @@ const products = [
     {
         id: 1,
         name: "Wireless Mouse",
-        price: 499,
+        price: 9,
         image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&q=80"
     },
     {
         id: 2,
         name: "Mechanical Keyboard",
-        price: 1499,
+        price: 199,
         image: "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&q=80"
     },
     {
         id: 3,
         name: "Headphones",
-        price: 999,
+        price: 15,
         image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
     },
     {
